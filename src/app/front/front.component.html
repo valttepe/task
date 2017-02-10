@@ -1,0 +1,16 @@
+
+<main>
+
+<h3>Front</h3>
+<ul>
+  <li *ngFor="let image of images">
+    <a [routerLink] = "['/media-player' , image.file_id]" >
+    <img *ngIf="image.media_type == 'image'" [alt]="image.title" [src]='url + ( image.filename | thumbnail: "small")'/>
+    </a>
+
+    <a [routerLink]="['/media-player', image.file_id]"><img *ngIf="image.media_type == 'audio'" [alt]="image.title" width="100px" height="100px" [src]='soundimage'/></a>
+  </li>
+</ul>
+
+</main>
+
